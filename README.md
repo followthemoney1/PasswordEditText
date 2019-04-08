@@ -4,6 +4,9 @@
 
 How it's works:
 
+<img src="https://github.com/followthemoney1/PasswordEditText/blob/master/ScreenRecording20190408at1%20(3).gif" data-canonical-src="https://github.com/followthemoney1/PasswordEditText/blob/master/ScreenRecording20190408at1%20(3).gif?raw=true?raw=true" width="400" height="290" />
+
+
 <img src="https://github.com/followthemoney1/PasswordEditText/blob/master/Screen%20Recording%202019-04-08%20at%2012.26.40.gif" data-canonical-src="https://github.com/followthemoney1/PasswordEditText/blob/master/Screen%20Recording%202019-04-08%20at%2012.26.40.gif?raw=true" width="200" height="380" />
 
 
