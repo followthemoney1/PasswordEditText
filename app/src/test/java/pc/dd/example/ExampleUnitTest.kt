@@ -1,4 +1,4 @@
-package pc.dd.passwordedittext
+package pc.dd.example
 
 import org.junit.Test
 

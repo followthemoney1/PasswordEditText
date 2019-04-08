@@ -1,4 +1,4 @@
-package pc.dd.passwordedittext
+package pc.dd.example
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
