@@ -38,6 +38,6 @@ allprojects {
 **Step 2. Add the dependency**
 ```
 dependencies {
-	        implementation 'com.github.followthemoney1:PasswordEditText:Tag'
+	        implementation 'com.github.followthemoney1:PasswordEditText:{version}'
 	}
 ```
