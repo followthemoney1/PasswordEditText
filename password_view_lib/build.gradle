@@ -1,23 +1,8 @@
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.followthemoney1'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.novoda.bintray-release'
-
-publish {
-
-    def groupProjectID = 'pc.dd.password_view'
-    def artifactProjectID = 'PasswordEditText'
-    def publishVersionID = '1.1.2'
-
-    userOrg = 'followthemoney1'
-    repoName = 'PasswordEditText'
-    groupId = groupProjectID
-    artifactId = artifactProjectID
-    publishVersion = publishVersionID
-    desc = 'concept library for checking the password for correct input'
-    website = 'https://github.com/followthemoney1/PasswordEditText.git'
-}
-
 
 android {
     compileSdkVersion 28
