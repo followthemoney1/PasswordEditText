@@ -140,6 +140,10 @@ class PasswordEditText(context: Context, attrs: AttributeSet) : LinearLayout(con
         animation?.start()
     }
 
+    public fun onTextChanged(onTextChanged: (String) -> Unit){
+        editText?.onTextChanged(onTextChanged)
+    }
+
     private fun EditText.onTextChanged(onTextChanged: (String) -> Unit) {
         this.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
