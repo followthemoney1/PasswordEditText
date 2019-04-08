@@ -2,7 +2,7 @@
 
 # The library is made from the [concept](https://www.uplabs.com/posts/password-strength-interaction) which is just an example of how this can be implemented. 
 
-How it's works:
+How it works:
 
 <img src="https://github.com/followthemoney1/PasswordEditText/blob/master/ScreenRecording20190408at1%20(3).gif" data-canonical-src="https://github.com/followthemoney1/PasswordEditText/blob/master/ScreenRecording20190408at1%20(3).gif?raw=true?raw=true" width="400" height="290" />
 
