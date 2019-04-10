@@ -23,7 +23,10 @@ Example:
 ```
 To use from code
 
-``` passwordEditText.onTextChanged { t -> Log.e(javaClass.name, t) }```
+``` 
+  passwordEditText.onTextChanged { t -> Log.e(javaClass.name, t) }
+  passwordEditText.onValidate = { validate ->  Log.e(javaClass.name, validate.toString())}
+```
 
 
 ## How to
