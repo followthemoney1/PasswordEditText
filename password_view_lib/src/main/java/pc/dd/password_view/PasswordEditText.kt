@@ -35,26 +35,31 @@ class PasswordEditText(context: Context, attrs: AttributeSet) : LinearLayout(con
     private var showBottomTips: Boolean = true
     private var cardProgressColor: Int? = null
     private var numberIconState: Boolean by Delegates.observable(false) { _, old, new ->
-        if (new != old) {
+        if (new != old)
             changeIconState(numberPresentIcon!!, new)
-        }
+
     }
     private var upperCaseIconState: Boolean by Delegates.observable(false) { _, old, new ->
-        if (new != old) {
+        if (new != old)
             changeIconState(upperCasePresentIcon!!, new)
-        }
+
     }
     private var lengthIconState: Boolean by Delegates.observable(false) { _, old, new ->
-        if (new != old) {
+        if (new != old)
             changeIconState(lengthPresentIcon!!, new)
-        }
+
     }
     private var specialCharacterIconState: Boolean by Delegates.observable(false) { _, old, new ->
-        if (new != old) {
+        if (new != old)
             changeIconState(specialCharacterPresentIcon!!, new)
-        }
+
     }
 
+    var onValidate: ((Boolean) -> Unit)? = null
+    private var validate: Boolean by Delegates.observable(false) { _, old, new ->
+        if (new != old)
+            onValidate?.invoke(new)
+    }
 
     /**
      * inflate
@@ -63,13 +68,17 @@ class PasswordEditText(context: Context, attrs: AttributeSet) : LinearLayout(con
         initView()
         setAttr(context.obtainStyledAttributes(attrs, R.styleable.PasswordEditText))
 
-        bottomTips?.visibility = if (showBottomTips)  View.VISIBLE else View.GONE
+        bottomTips?.visibility = if (showBottomTips) View.VISIBLE else View.GONE
         progressCardView?.setProgressColorFromResources(cardProgressColor!!)
 
-        editText?.onTextChanged { t -> progressCardView?.progress = validate(t) }
+        editText?.onTextChanged { t ->
+            val validateInt = validate(t)
+            validate = validateInt == 4
+            progressCardView?.progress = validateInt
+        }
     }
 
-    private fun initView(){
+    private fun initView() {
         inflate(context, R.layout.password_edit_text, this)
 
         editText = findViewById(R.id.sampleEditText)
@@ -81,7 +90,7 @@ class PasswordEditText(context: Context, attrs: AttributeSet) : LinearLayout(con
         bottomTips = findViewById(R.id.bottom_tips)
     }
 
-    private fun setAttr(attributes : TypedArray){
+    private fun setAttr(attributes: TypedArray) {
         showBottomTips = attributes.getBoolean(R.styleable.PasswordEditText_showBottomTips, true)
         cardProgressColor = attributes.getColor(R.styleable.PasswordEditText_cardProgressColor, Color.GREEN)
         attributes.recycle()
@@ -140,7 +149,7 @@ class PasswordEditText(context: Context, attrs: AttributeSet) : LinearLayout(con
         animation?.start()
     }
 
-    public fun onTextChanged(onTextChanged: (String) -> Unit){
+    fun onTextChanged(onTextChanged: (String) -> Unit) {
         editText?.onTextChanged(onTextChanged)
     }
 
